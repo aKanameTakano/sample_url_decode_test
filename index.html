@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style rel="stylesheet">
+          body {
+               padding: 2rem;
+          }
+
+          div {
+               word-wrap: break-word;
+          }
+     </style>
+     <title>URL TEST</title>
+</head>
+
+<body>
+     <h1>URL TEST</h1>
+
+     <h2>エンコード URL</h2>
+     <div id="url"></div>
+     <div>
+          <span id="url-count">0</span>
+          <span>文字</span>
+     </div>
+
+     <h2>デコード URL</h2>
+     <div id="decode-url"></div>
+     <div>
+          <span id="decode-url-count">0</span>
+          <span>文字</span>
+     </div>
+
+</body>
+
+<script>
+     window.onload = () => {
+          const url = location.href;
+          const url_count = location.href.length;
+
+          document.getElementById("url").innerText = url;
+          document.getElementById("url-count").innerText = url_count;
+
+          const decode_url = decodeURI(url);
+          document.getElementById("decode-url").innerText = decode_url;
+          document.getElementById("decode-url-count").innerText = decode_url.length;
+     }
+</script>
+
+</html>
